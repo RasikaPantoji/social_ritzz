@@ -1,0 +1,19 @@
+<script>
+  const video = document.getElementById("myVideo");
+  const btn = document.getElementById("playPauseBtn");
+
+  btn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      btn.style.display = "none";  // hide when playing
+    } else {
+      video.pause();
+      btn.style.display = "flex";  // show when paused
+    }
+  });
+
+  // Show button again when video ends
+  video.addEventListener("ended", () => {
+    btn.style.display = "flex";
+  });
+</script>
